@@ -1,0 +1,44 @@
+{
+    "name": "com.acc.crdv",
+    "displayName": "HelloCordova",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "ecosystem:cordova"
+    ],
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova": "^9.0.0",
+        "cordova-android": "^8.0.0",
+        "cordova-ios": "^5.0.1",
+        "cordova-plugin-browsertab": "0.2.0",
+        "cordova-plugin-buildinfo": "2.0.3",
+        "cordova-plugin-compat": "^1.2.0",
+        "cordova-plugin-customurlscheme": "4.4.0",
+        "cordova-plugin-inappbrowser": "3.0.0",
+        "cordova-plugin-whitelist": "^1.3.3",
+        "cordova-universal-links-plugin": "git+https://github.com/walteram/cordova-universal-links-plugin.git",
+        "cordova-universal-links-plugin-fix": "1.2.1"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-buildinfo": {},
+            "cordova-universal-links-plugin": {},
+            "cordova-plugin-browsertab": {},
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-customurlscheme": {
+                "URL_SCHEME": "com.acc.crdv"
+            },
+            "cordova-plugin-whitelist": {}
+        },
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    }
+}
