@@ -12,22 +12,22 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
-        window.fbAsyncInit = function() {
-          FB.init ({
-             appId      : '186142862315301',
-             xfbml      : true,
-             version    : 'v2.6'
-          });
-       };
+      //   window.fbAsyncInit = function() {
+      //     FB.init ({
+      //        appId      : '186142862315301',
+      //        xfbml      : true,
+      //        version    : 'v2.6'
+      //     });
+      //  };
     
-       (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) {return;}
-          js = d.createElement(s); js.id = id;
-          js.src = "http://connect.facebook.net/en_US/sdk.js";
-         //  js.src = "sdk.js";
-          fjs.parentNode.insertBefore(js, fjs);
-       } (document, 'script', 'facebook-jssdk'));
+      //  (function(d, s, id) {
+      //     var js, fjs = d.getElementsByTagName(s)[0];
+      //     if (d.getElementById(id)) {return;}
+      //     js = d.createElement(s); js.id = id;
+      //     js.src = "http://connect.facebook.net/en_US/sdk.js";
+      //    //  js.src = "sdk.js";
+      //     fjs.parentNode.insertBefore(js, fjs);
+      //  } (document, 'script', 'facebook-jssdk'));
       
 
        
@@ -60,39 +60,39 @@ var app = {
 };
 
 
-// function googleSignin() {
-//    var providerGoogle = new firebase.auth.GoogleAuthProvider();
-//    firebase.auth().signInWithRedirect(providerGoogle)
-//    .then(function(result) {
+function googleSignin() {
+   var providerGoogle = new firebase.auth.GoogleAuthProvider();
+   firebase.auth().signInWithRedirect(providerGoogle)
+   .then(function(result) {
 
-//       var myGOOGLEResult = JSON.stringify(result);
-//       console.log('myGOOGLEResult ' + myGOOGLEResult);
-//      //console.log(JSON.stringify(result));
+      var myGOOGLEResult = JSON.stringify(result);
+      console.log('myGOOGLEResult ' + myGOOGLEResult);
+     //console.log(JSON.stringify(result));
      
 
-//       // var token = result.credential.accessToken;
-//       // var user = result.user;
+      // var token = result.credential.accessToken;
+      // var user = result.user;
 		
-//       // console.log(token);
-//       // console.log(user);
-//    }).catch(function(error) {
-//       var errorCode = error.code;
-//       var errorMessage = error.message;
+      // console.log(token);
+      // console.log(user);
+   }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
 		
-//       // console.log(error.code);
-//       // console.log(error.message);
-//    });
-// }
+      // console.log(error.code);
+      // console.log(error.message);
+   });
+}
 
-// function googleSignout() {
-//    firebase.auth().signOut()
+function googleSignout() {
+   firebase.auth().signOut()
 	
-//    .then(function() {
-//       console.log('Signout Succesfull');
-//    }, function(error) {
-//       console.log('Signout Failed');  
-//    });
-// }
+   .then(function() {
+      console.log('Signout Succesfull');
+   }, function(error) {
+      console.log('Signout Failed');  
+   });
+}
 
 function facebookSignin() {
    var provider = new firebase.auth.FacebookAuthProvider();
@@ -100,8 +100,8 @@ function facebookSignin() {
    // firebase.auth().signInWithPopup(provider)
 
    // console.log("12345 "+String(provider));
-   var myJSON = JSON.stringify(provider);
-     console.log("myJSON "+myJSON);
+   // var myJSON = JSON.stringify(provider);
+   //   console.log("myJSON "+myJSON);
    firebase.auth().signInWithRedirect(provider);
    // firebase.auth().signInWithRedirect(provider)                   
    
@@ -109,7 +109,7 @@ function facebookSignin() {
 
       var myResult = JSON.stringify(result);
      console.log("myResult "+myResult);
-     console.log("currentuser..."+ firebase.auth().currentUser);
+     //console.log("currentuser..."+ firebase.auth().currentUser);
       //console.log("RESULT "+ result);
 
       //data.items[1].name
@@ -129,10 +129,10 @@ function facebookSignout() {
    // console.log("FB TOKEN:"+token);
     console.log('Signout= successful!');
     
-    FB.logout(function(response) {
-      // user is now logged out
-      console.log('FBLOGOUT = successful!');
-    });
+   //  FB.logout(function(response) {
+   //    // user is now logged out
+   //    console.log('FBLOGOUT = successful!');
+   //  });
  }, function(error) {
     console.log('Signout failed');
  });
